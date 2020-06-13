@@ -3,7 +3,7 @@
 #import(methods)
 importFrom(methods, show)
 
-import(RCurl)
+import(httr)
 import(XML)
 
 export(xml.rpc)

@@ -1,28 +1,16 @@
 
 xml.rpc =
 function(url, method, ..., .args = list(...),
-          .opts = list(),
-          .defaultOpts = list(httpheader = c('Content-Type' = "text/xml"), followlocation = TRUE, useragent = useragent),
-          .convert = TRUE, .curl = getCurlHandle(), useragent = "R-XMLRPC")
+          .convert = TRUE)
 {
     # Turn the method and arguments to an RPC body.
   body = createBody(method,  .args)
 
-    # merge the .defaultOpts and the .opts into one list.
-  .defaultOpts[["postfields"]] = saveXML(body)
-  if(length(.opts))
-     .defaultOpts[names(.opts)] = .opts
-
-  rdr = dynCurlReader(.curl, baseURL = url)
-  .defaultOpts[["headerfunction"]] = rdr$update
-  ans = postForm(url, .opts = .defaultOpts, style = "POST", curl = .curl)
-
-  hdr = parseHTTPHeader(rdr$header())
-  if(as.integer(hdr[["status"]]) %/% 100 !=  2) {
-       # call an RCurl error generator function.      
+  ans = POST(url, body=saveXML(body),encode="raw")
+  if(ans$status_code %/% 100 !=  2) {
      stop("Problems")
   }
-  ans = rdr$value()
+  ans = content(ans,as="text")
 
    # Now either convert using the default converter fnction (convertToR)
    # or return as is or allow the caller to specify a function to use for conversion.
