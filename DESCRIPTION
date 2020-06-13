@@ -1,11 +1,13 @@
 Package: XMLRPC
-Version: 0.3-1
+Version: 0.4.0
 Title: Remote Procedure Call (RPC) via XML in R
-Description: A simple implementation of XML-RPC for R.
+Description: A simple implementation of XML-RPC for R, forked to use httr.
 Imports: methods, httr, XML
 License: BSD
-Author: Duncan Temple Lang
-Maintainer: Duncan Temple Lang <duncan@wald.ucdavis.edu>
+Authors@R: c(
+  person("Duncan", "Temple Lang", email = "duncan@wald.ucdavis.edu",role = c("aut", "cre","cph")),
+  person("Joseph", "Guillaume", email = "josephguillaume@gmail.com", role = "aut")
+  )
 References: http://en.wikipedia.org/wiki/Xml-rpc
 Suggests: 
     testthat
