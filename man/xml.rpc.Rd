@@ -8,7 +8,9 @@
  and also converts the result back to R.
 }
 \usage{
-xml.rpc(url, method, ..., .args = list(...), .convert = TRUE)
+xml.rpc(url, method, ..., .args = list(...), 
+.config=list(user_agent("https://github.com/josephguillaume/XMLRPC")), 
+.convert = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,6 +18,7 @@ xml.rpc(url, method, ..., .args = list(...), .convert = TRUE)
   \item{method}{a string giving the name of the XML-RPC method to invoke}
   \item{\dots}{a collection of argument valuesn}
   \item{.args}{an alternative way to specify the collection (list) of arguments}
+  \item{.config}{httr configuration settings, see \code{\link[httr]{POST}}}
   \item{.convert}{either a logical value indicating whether to perform
     the defalt conversion (via \code{convertToR}) or not,
     or alternatively a function which  is called with a string

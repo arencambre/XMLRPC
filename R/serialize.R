@@ -1,12 +1,13 @@
 
 xml.rpc =
 function(url, method, ..., .args = list(...),
+          .config=list(user_agent("https://github.com/josephguillaume/XMLRPC")),
           .convert = TRUE)
 {
     # Turn the method and arguments to an RPC body.
   body = createBody(method,  .args)
 
-  ans = POST(url, body=saveXML(body),encode="raw")
+  ans = POST(url, body=saveXML(body),encode="raw",config=.config)
   if(ans$status_code %/% 100 !=  2) {
      stop("Problems")
   }
