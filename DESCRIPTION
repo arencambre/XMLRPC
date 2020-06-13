@@ -7,3 +7,5 @@ License: BSD
 Author: Duncan Temple Lang
 Maintainer: Duncan Temple Lang <duncan@wald.ucdavis.edu>
 References: http://en.wikipedia.org/wiki/Xml-rpc
+Suggests: 
+    testthat
