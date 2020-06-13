@@ -86,7 +86,7 @@ setMethod("rpc.serialize", "NULL",
 setMethod("rpc.serialize", "raw",
            function(x, ...) {
 #              x = gsub("\\n", "", x)
-              val = base64Encode(x)
+              val = base64encode(x)
               newXMLNode("value", newXMLNode("base64", val))
            })
 
@@ -248,7 +248,7 @@ function(node, ...)
          'double' = as.numeric(xmlValue(node)),
          'string' = xmlValue(node),
          'dateTime.iso8601' = as.POSIXct(strptime(xmlValue(node), "%Y%m%dT%H:%M:%S")),
-         'base64' = base64(xmlValue(node), encode = FALSE),
+         'base64' = base64decode(xmlValue(node)),
          xmlValue(node)
         )
 

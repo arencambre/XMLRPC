@@ -1,7 +1,8 @@
 #  The following inhibits R CMD check from complaining about not
 # being able to load the namespace based on the specified dependencies.
 #import(methods)
-importFrom(methods, show)
+importFrom("methods", "show", "is", "slot", "slotNames")
+importFrom("base64enc","base64encode","base64decode")
 
 import(httr)
 import(XML)

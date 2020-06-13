@@ -50,7 +50,7 @@ test_that("rpc.serialize works", {
   )
   expect_equal(XMLRPC:::xmlRPCToR(top[["struct"]]),
                list(lowerBound = 18L, upperBound = 139L))
-  expect_equal(XMLRPC:::xmlRPCToR(top[["base64"]]), "you can't read this!")
+  expect_equal(rawToChar(XMLRPC:::xmlRPCToR(top[["base64"]])), "you can't read this!")
   
   expect_equal(
     xmlApply(top, XMLRPC:::xmlRPCToR),
@@ -68,7 +68,7 @@ test_that("rpc.serialize works", {
                   "POSIXt"),
         tzone = ""
       ),
-      base64 = "you can't read this!",
+      base64 = charToRaw("you can't read this!"),
       array = list(
         value = 12L,
         value = "Egypt",

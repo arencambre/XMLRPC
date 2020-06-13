@@ -2,7 +2,7 @@ Package: XMLRPC
 Version: 0.4.0
 Title: Remote Procedure Call (RPC) via XML in R
 Description: A simple implementation of XML-RPC for R, forked to use httr.
-Imports: methods, httr, XML
+Imports: methods, httr, XML, base64enc
 License: BSD
 Authors@R: c(
   person("Duncan", "Temple Lang", email = "duncan@wald.ucdavis.edu",role = c("aut", "cre","cph")),
