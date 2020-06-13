@@ -8,13 +8,9 @@ import(XML)
 
 export(xml.rpc)
 
-exportClass("XMLRPCServer")
-export("XMLRPCServer")
-exportMethods("$")
-
 export(rpc.serialize)
 
 # rpc.serialize - convert to XML-RPC from R
-# covertToR, xmlRPCToR - convert response from XML-RPC method call
+# convertToR, xmlRPCToR - convert response from XML-RPC method call
 # createBody - for creating the body of the XML-RPC request
 
