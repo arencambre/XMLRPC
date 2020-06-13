@@ -1,14 +1,14 @@
 Version 0.4.0
 
-  *   Fork from CRAN version
+  *   Fork from omegahat.net version
   *   Drop RCurl in favour of httr
+  *   No longer provide XMLRPCServer
   *   Move to testthat
-  *   Not providing XMLRPCServer
-
+  *   Move to base64enc instead of RCurl::base64
 
 Version 0.3-1
 
-*   Fix from Joseph Guillaume to recursivel call rpc.serialize() on elements of a list.
+*   Fix from Joseph Guillaume to recursively call rpc.serialize() on elements of a list.
 
 Version 0.3-0
 
