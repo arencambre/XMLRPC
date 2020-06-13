@@ -78,6 +78,8 @@ test_that("rpc.serialize works", {
       struct = list(lowerBound = 18L, upperBound = 139L)
     )
   )
+  
   # Round trip the data.
-  expect_equal(x = XMLRPC:::rpc.serialize(1:10), XMLRPC:::xmlRPCToR(x))
+  x = XMLRPC:::rpc.serialize(1:10)
+  expect_equal(XMLRPC:::xmlRPCToR(x),1:10)
 })
