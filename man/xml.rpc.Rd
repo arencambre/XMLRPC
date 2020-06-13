@@ -34,34 +34,14 @@ xml.rpc(url, method, ..., .args = list(...), .convert = TRUE)
  \url{http://www.cafeconleche.org/books/xmljava/chapters/ch02s05.html}
   for a DTD for XML-RPC and examples and discussion.
 }
-\author{Duncan Temple Lang }
+\author{Duncan Temple Lang, adapted to httr by Joseph Guillaume }
 
 \seealso{
   \code{\link[httr]{POST}}
 }
 \examples{
- # See http://www.advogato.org/xmlrpc.html
-
-xml.rpc('http://www.advogato.org/XMLRPC', 'test.square', 9L)
-xml.rpc('http://www.advogato.org/XMLRPC', 'test.sumprod', 9L, 10L)
-xml.rpc('http://www.advogato.org/XMLRPC', 'test.strlen', 'abcdef')
-xml.rpc('http://www.advogato.org/XMLRPC', 'test.capitalize', 'abcdef')
-
-xml.rpc('http://www.advogato.org/XMLRPC', 'user.exists', 'duncan')
-xml.rpc('http://www.advogato.org/XMLRPC', 'cert.get', 'duncan')
-
-xml.rpc('http://www.advogato.org/XMLRPC', 'diary.len', 'duncan')
-xml.rpc('http://www.advogato.org/XMLRPC', 'diary.get', 'duncan', 1L)
-xml.rpc('http://www.advogato.org/XMLRPC', 'diary.getDates', 'duncan', 4L)
-
 
 xml.rpc("http://xmlrpc-c.sourceforge.net/api/sample.php", "sample.sumAndDifference", 3L, 4L)
-
-# Doesn't work
-#  xml.rpc('http://ws2.webservices.nl', 'system.methodHelp', 'addressReeksPostcodeSearch')
-
-# xml.rpc('http://www.cookcomputing.com/xmlrpcsamples/RPC2.ashx', 'example.getStateName', 2L)
-
 
 }
 \keyword{IO}
